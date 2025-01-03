@@ -1,0 +1,12 @@
+#root {
+  --black: #212121;
+  --white: #fafafa;
+}
+
+body {
+  padding: 35px 30px;
+  max-width: 1000px;
+  margin: 0 auto;
+  text-decoration: none;
+  font-family: 'Open Sans', sans-serif;
+}
