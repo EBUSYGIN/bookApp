@@ -20,7 +20,8 @@
     "globals": "^15.12.0",
     "rollup": "^4.27.3",
     "rollup-plugin-css-modules": "^0.1.2",
-    "rollup-plugin-import-css": "^3.5.8"
+    "rollup-plugin-import-css": "^3.5.8",
+    "rollup-plugin-postcss": "^4.0.2"
   },
   "dependencies": {
     "on-change": "^5.0.1"

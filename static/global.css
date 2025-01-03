@@ -1,6 +1,8 @@
 #root {
   --black: #212121;
   --white: #fafafa;
+  --gray: #dedede;
+  --secondary-black: #121212;
 }
 
 body {
