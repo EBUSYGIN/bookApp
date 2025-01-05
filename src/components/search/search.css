@@ -3,6 +3,7 @@
   display: flex;
   gap: 11px;
   align-items: center;
+  margin-bottom: 30px;
 }
 
 .wrapper {
