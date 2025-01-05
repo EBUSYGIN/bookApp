@@ -4,6 +4,6 @@ export class DivComponent {
   }
 
   render() {
-    this.el;
+    return this.el;
   }
 }

@@ -1,6 +1,5 @@
 import { nodeResolve } from '@rollup/plugin-node-resolve';
-
-import css from 'rollup-plugin-import-css';
+import postcss from 'rollup-plugin-postcss';
 
 export default {
   input: 'src/app.js',
@@ -10,8 +9,8 @@ export default {
   },
   plugins: [
     nodeResolve(),
-    css({
-      output: 'bundle.css'
+    postcss({
+      modules: true
     })
   ]
 };
