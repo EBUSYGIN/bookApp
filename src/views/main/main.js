@@ -7,6 +7,7 @@ import { CardList } from '../../components/card-list/card-list';
 export class MainView extends AbstractView {
   state = {
     list: [],
+    numFound: 0,
     loading: false,
     searchQuery: undefined,
     offset: 0
@@ -27,14 +28,16 @@ export class MainView extends AbstractView {
   async stateHook(path) {
     if (path === 'searchQuery') {
       this.state.loading = true;
-      this.state.list = await this.loadBooks(
+      const data = await this.loadBooks(
         this.state.searchQuery,
         this.state.offset
       );
+      this.state.list = data.docs;
+      this.state.numFound = data.numFound;
       this.state.loading = false;
     }
 
-    if (path === 'loading' || path === 'list') this.render();
+    if (path === 'loading' || path === 'list') this.renderCardList();
   }
 
   async loadBooks(q, offset) {
@@ -49,21 +52,36 @@ export class MainView extends AbstractView {
         }
       );
       const data = await res.json();
-      return data.docs;
+      return data;
     } catch (e) {
       console.log(e);
     }
   }
 
+  clearContainer(id) {
+    const oldContainer = this.app.querySelector(`#${id}`);
+    if (oldContainer) oldContainer.remove();
+  }
+
   render() {
     this.app.innerHTML = '';
     this.renderHeader();
-    this.app.append(new Search(this.state).render());
-    this.app.append(new CardList(this.appState, this.state).render());
+    this.renderSearch();
+    this.renderCardList();
   }
 
   renderHeader() {
-    const header = new Header(this.appState).render();
-    this.app.prepend(header);
+    this.clearContainer('header');
+    this.app.prepend(new Header(this.appState).render());
+  }
+
+  renderSearch() {
+    this.clearContainer('search');
+    this.app.append(new Search(this.state).render());
+  }
+
+  renderCardList() {
+    this.clearContainer('card-list');
+    this.app.append(new CardList(this.appState, this.state).render());
   }
 }

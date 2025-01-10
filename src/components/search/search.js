@@ -13,7 +13,9 @@ export class Search extends DivComponent {
   }
 
   render() {
+    this.el.setAttribute('id', 'search');
     this.el.classList.add(`${styles.search}`);
+    this.el.setAttribute('id', '');
     this.el.innerHTML = `
       <div class='${styles.wrapper}'>
         <img src='/static/images/icons/search.svg' alt='Поиск' class='${

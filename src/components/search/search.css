@@ -45,4 +45,5 @@
   border: none;
   background-color: var(--black);
   border-radius: 5px;
+  cursor: pointer;
 }

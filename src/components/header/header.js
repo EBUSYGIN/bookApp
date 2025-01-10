@@ -9,6 +9,7 @@ export class Header extends DivComponent {
 
   render() {
     this.el.classList.add(`${styles.header}`);
+    this.el.setAttribute('id', 'header');
     this.el.innerHTML = `
       <div>
         <img src='/static/images/logo.svg' alt='логотип' />
