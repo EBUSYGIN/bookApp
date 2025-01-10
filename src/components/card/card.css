@@ -1,0 +1,38 @@
+.card {
+  max-width: 180px;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  border-radius: 8px;
+  justify-self: center;
+  align-self: center;
+}
+
+.header {
+  background: var(--gray);
+  padding: 11px 45px 0 45px;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  min-height: 140px;
+}
+
+.info {
+  background-color: var(--black);
+  height: 40px;
+  padding: 12px 10px 38px 10px;
+}
+
+.tag {
+  font-weight: 300;
+  font-size: 11px;
+  text-transform: capitalize;
+  color: var(--input-gray);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.cover {
+  width: 91px;
+}

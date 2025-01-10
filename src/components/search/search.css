@@ -12,7 +12,7 @@
 }
 
 .input {
-  background: var(--gray);
+  background: var(--input-gray);
   border: none;
   height: 56px;
   width: 100%;

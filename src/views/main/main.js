@@ -52,6 +52,7 @@ export class MainView extends AbstractView {
         }
       );
       const data = await res.json();
+      console.log(data);
       return data;
     } catch (e) {
       console.log(e);
