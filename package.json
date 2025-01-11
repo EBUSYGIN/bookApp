@@ -7,7 +7,7 @@
   "scripts": {
     "start": "live-server",
     "build": "rollup -c --watch",
-    "deploy": "serve dist"
+    "deploy": "serve -s dist"
   },
   "keywords": [
     "Books"
