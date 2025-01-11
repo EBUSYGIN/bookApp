@@ -44,6 +44,7 @@
   display: -webkit-box; /* Включаем flexbox-контейнер */
   -webkit-box-orient: vertical; /* Вертикальное направление */
   -webkit-line-clamp: 2; /* Ограничиваем количество строк */
+  line-clamp: 2;
   overflow: hidden;
   text-overflow: ellipsis;
 }
