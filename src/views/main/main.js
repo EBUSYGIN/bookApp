@@ -22,7 +22,10 @@ export class MainView extends AbstractView {
   }
 
   appStateHook(path) {
-    console.log(path);
+    if (path === 'favorites') {
+      this.renderHeader();
+      this.renderCardList();
+    }
   }
 
   async stateHook(path) {
@@ -52,7 +55,6 @@ export class MainView extends AbstractView {
         }
       );
       const data = await res.json();
-      console.log(data);
       return data;
     } catch (e) {
       console.log(e);

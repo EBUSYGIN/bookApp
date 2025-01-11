@@ -6,7 +6,7 @@ class App {
   routes = [{ path: '', view: MainView }];
 
   appState = {
-    favorites: [{ key: '/works/OL82563W' }]
+    favorites: []
   };
 
   constructor() {
