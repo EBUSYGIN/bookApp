@@ -6,7 +6,8 @@
   "type": "module",
   "scripts": {
     "start": "live-server",
-    "build": "rollup -c --watch"
+    "build": "rollup -c --watch",
+    "deploy": "serve dist"
   },
   "keywords": [
     "Books"
@@ -24,6 +25,7 @@
     "rollup-plugin-postcss": "^4.0.2"
   },
   "dependencies": {
-    "on-change": "^5.0.1"
+    "on-change": "^5.0.1",
+    "serve": "^14.2.4"
   }
 }
