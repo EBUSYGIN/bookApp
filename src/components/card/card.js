@@ -11,6 +11,13 @@ export class Card extends DivComponent {
   render() {
     this.el.setAttribute('id', 'card');
     this.el.classList.add(`${styles.card}`);
+
+    const inFavorites = this.appState.favorites.find(
+      (book) => book.key === this.cardState.key
+    );
+    const title = this.cardState.title || 'Название не задано';
+    const author = this.cardState.author_name || 'Автор не задан';
+
     this.el.innerHTML = `
       <div class='${styles.header}'>
         ${
@@ -25,10 +32,24 @@ export class Card extends DivComponent {
       this.cardState.subject
         ? this.cardState.subject.slice(0, 3).join(', ')
         : 'Не задан жанр'
-    }</div>
-        <div class='${styles.title}></div>
-        <div class='${styles.author}'></div>
-      <div />
+    }
+        </div>
+        <div class='${styles.title}'>
+          ${title}
+        </div>
+        <div class='${styles.author}'>
+          ${author}
+        </div>      
+        <button class='${styles.button} ${
+      inFavorites ? `${styles.favorite}` : ''
+    }'>
+          ${
+            inFavorites
+              ? `<img src="/static/images/icons/favorites.svg" />`
+              : `<img src="/static/images/icons/favorite-white.svg" />`
+          }
+        </button>
+      </div>
     `;
 
     return this.el;

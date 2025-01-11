@@ -1,5 +1,6 @@
 .card {
   max-width: 180px;
+  height: 100%;
   display: flex;
   flex-direction: column;
   overflow: hidden;
@@ -14,13 +15,12 @@
   display: flex;
   justify-content: center;
   align-items: flex-end;
-  min-height: 140px;
+  height: 140px;
 }
 
 .info {
   background-color: var(--black);
-  height: 40px;
-  padding: 12px 10px 38px 10px;
+  padding: 12px 10px;
 }
 
 .tag {
@@ -31,8 +31,49 @@
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
+  margin-bottom: 3px;
+}
+
+.title {
+  font-weight: 600;
+  font-size: 15px;
+  line-height: 104%;
+  color: var(--white);
+  margin-bottom: 8px;
+  height: 32px;
+  display: -webkit-box; /* Включаем flexbox-контейнер */
+  -webkit-box-orient: vertical; /* Вертикальное направление */
+  -webkit-line-clamp: 2; /* Ограничиваем количество строк */
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.author {
+  font-weight: 400;
+  font-size: 10px;
+  color: var(--white);
+  margin-bottom: 38px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.button {
+  width: 36px;
+  height: 36px;
+  border-radius: 6px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: none;
+  border: 1px solid var(--white);
+}
+
+.favorite {
+  background: var(--white);
 }
 
 .cover {
-  width: 91px;
+  max-width: 91px;
+  max-height: 130px;
 }
