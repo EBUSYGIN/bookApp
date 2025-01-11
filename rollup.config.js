@@ -1,6 +1,6 @@
 import { nodeResolve } from '@rollup/plugin-node-resolve';
 import postcss from 'rollup-plugin-postcss';
-import html from '@rollup/plugin-html';
+import copy from 'rollup-plugin-copy';
 
 export default {
   input: 'src/app.js',
@@ -13,29 +13,10 @@ export default {
     postcss({
       modules: true
     }),
-    html({
-      template: () => `
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
-    <script src="./app.js" type="module"></script>
-    <link rel="stylesheet" href="./bundle.css" />
-    <link rel="stylesheet" href="./static/global.css" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap"
-      rel="stylesheet"
-    />
-  </head>
-  <body>
-    <div id="root"></div>
-  </body>
-</html>
-      `
+    copy({
+      targets: [
+        { src: 'index.html', dest: 'dist' } // Копируем index.html в dist
+      ]
     })
   ]
 };
