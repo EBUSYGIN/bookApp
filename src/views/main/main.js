@@ -3,6 +3,7 @@ import onChange from 'on-change';
 import { Header } from '../../components/header/header';
 import { Search } from '../../components/search/search';
 import { CardList } from '../../components/card-list/card-list';
+import { CardListTitle } from '../../components/card-list-title/card-list-title';
 
 export class MainView extends AbstractView {
   state = {
@@ -61,6 +62,11 @@ export class MainView extends AbstractView {
     }
   }
 
+  destroy() {
+    onChange.unsubscribe(this.appState);
+    onChange.unsubscribe(this.state);
+  }
+
   clearContainer(id) {
     const oldContainer = this.app.querySelector(`#${id}`);
     if (oldContainer) oldContainer.remove();
@@ -85,6 +91,8 @@ export class MainView extends AbstractView {
 
   renderCardList() {
     this.clearContainer('card-list');
+    this.clearContainer('title');
+    this.app.append(new CardListTitle(this.state).render());
     this.app.append(new CardList(this.appState, this.state).render());
   }
 }

@@ -6,8 +6,7 @@
   "type": "module",
   "scripts": {
     "start": "live-server",
-    "build": "rollup -c --watch",
-    "deploy": "serve -s dist"
+    "build": "rollup -c --watch"
   },
   "keywords": [
     "Books"
