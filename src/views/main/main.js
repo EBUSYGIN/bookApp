@@ -67,11 +67,6 @@ export class MainView extends AbstractView {
     onChange.unsubscribe(this.state);
   }
 
-  clearContainer(id) {
-    const oldContainer = this.app.querySelector(`#${id}`);
-    if (oldContainer) oldContainer.remove();
-  }
-
   render() {
     this.app.innerHTML = '';
     this.renderHeader();

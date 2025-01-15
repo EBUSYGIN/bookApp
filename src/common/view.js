@@ -7,6 +7,11 @@ export class AbstractView {
     document.title = title;
   }
 
+  clearContainer(id) {
+    const oldContainer = this.app.querySelector(`#${id}`);
+    if (oldContainer) oldContainer.remove();
+  }
+
   render() {
     return;
   }

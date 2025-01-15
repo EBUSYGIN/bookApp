@@ -9,6 +9,12 @@ export class CardListTitle extends DivComponent {
 
   render() {
     this.el.setAttribute('id', 'title');
+
+    if (this.parentState.favorites) {
+      this.el.innerHTML = `<h1 class='${styles.title}'>Избранные книги: ${this.parentState.favorites.length}</h1>`;
+      return this.el;
+    }
+
     if (this.parentState.loading) {
       this.el.innerHTML = `<h1 class='${styles.title}'>Загружаем книги. Подождите, пожалуйста</h1>`;
       return this.el;
