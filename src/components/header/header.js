@@ -1,4 +1,5 @@
 import { DivComponent } from '../../common/div';
+
 import styles from './header.css';
 
 export class Header extends DivComponent {
@@ -15,11 +16,11 @@ export class Header extends DivComponent {
         <img src='/static/images/logo.svg' alt='логотип' />
       </div>
       <div class=${styles.menu}>
-        <a class='${styles.menu__item}' href='#'>
+        <a class='${styles.menu__item1}' href='#'>
           <img src='/static/images/icons/search.svg' alt='Поиск' />
           Поиск книг
         </a>
-        <a class='${styles.menu__item}' href='#favorites'>
+        <a class='${styles.menu__item2}' href='#/favorites'>
           <img src='/static/images/icons/favorites.svg' alt='Избранное' />
            Избранное
         </a>
