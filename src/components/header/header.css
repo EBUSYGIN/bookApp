@@ -11,7 +11,8 @@
   gap: 30px;
 }
 
-.menu__item {
+.menu__item1,
+.menu__item2 {
   display: flex;
   gap: 10px;
   font-size: 14px;
@@ -33,4 +34,8 @@
   font-size: 14px;
   line-height: 267%;
   color: var(--secondary-black);
+}
+
+.menu__item1 {
+  font-weight: 700;
 }

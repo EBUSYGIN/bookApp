@@ -1,0 +1,13 @@
+.title-box {
+  width: 100%;
+  margin-bottom: 21px;
+}
+
+.title {
+  margin: 0;
+  text-align: left;
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 133%;
+  color: var(--secondary-black);
+}

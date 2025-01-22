@@ -27,17 +27,20 @@ export class Card extends DivComponent {
     );
     const title = this.cardState.title || 'Название не задано';
     const author = this.cardState.author_name || 'Автор не задан';
+    const key = this.cardState.key.substring(7);
 
-    this.el.innerHTML = `
+    this.el.innerHTML = `<a href='#/book/${key}'>
       <div class='${styles.header}'>
+         
         ${
           this.cardState.cover_edition_key
             ? `<img src='https://covers.openlibrary.org/b/olid/${this.cardState.cover_edition_key}-M.jpg' alt='Обложка книги' class='${styles.cover}'/>`
             : `<img src='/static/images/not-found.png' alt='Обложка книги' class='${styles.cover}'/>`
         }
         
-      </div>
+      </div></a>
       <div class='${styles.info}'>
+          <a href='#/book/${key}}'>
         <div class='${styles.tag}'>${
       this.cardState.subject
         ? this.cardState.subject.slice(0, 3).join(', ')
@@ -49,7 +52,8 @@ export class Card extends DivComponent {
         </div>
         <div class='${styles.author}'>
           ${author}
-        </div>      
+        </div>
+        </a>     
         <button class='${styles.button} ${
       inFavorites ? `${styles.favorite}` : ''
     }'>
@@ -60,15 +64,18 @@ export class Card extends DivComponent {
           }
         </button>
       </div>
+    
     `;
 
     if (inFavorites) {
-      this.el.querySelector('button').addEventListener('click', () => {
+      this.el.querySelector('button').addEventListener('click', (e) => {
         this.#removeFromFavorites();
+        e.stopPropagation();
       });
     } else {
-      this.el.querySelector('button').addEventListener('click', () => {
+      this.el.querySelector('button').addEventListener('click', (e) => {
         this.#addToFavorites();
+        e.stopPropagation();
       });
     }
 
